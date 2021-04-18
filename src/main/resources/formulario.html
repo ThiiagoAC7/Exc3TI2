@@ -1,0 +1,183 @@
+<html>
+<head>
+<meta content="text/html; charset = UTF-8" http-equiv="content-type">
+
+<title>Controle de Estoque</title>
+</head>
+
+<script type="text/javascript">
+	function addIdToPath(form_name, base_url){
+		var your_form = document.getElementById(form_name);
+		var id = your_form.elements.namedItem("id").value;
+		action_src = base_url + id;
+		your_form.action = action_src;
+	}
+</script>
+
+
+<body>
+	<p>
+		<h1 class="titulo">Controle de Usuários X</h1>
+	</p>
+	<section class="section--container__responsive">
+		<section class="section--mainrow__responsive first--section">
+			<h1 class="generaltext">Inserir Usuário X</h1>
+			<form class="form--register" action="http://localhost:6789/x" method="post" id="form-add">
+				<p>Id x:</p>          
+				<input class="input--register" type="text" name="idx" value="" placeholder="id de usuário">
+				<p>Nome:</p>              
+				<input class="input--register" type="text" name="nome" value="" placeholder="nome do usuário">
+				<p>Email:</p>
+				<input class="input--register" type="text" name="email" value="" placeholder="email@dousuário.com">
+				<p>Senha:</p>
+				<input class="input--register" type="text" name="senha" value="" placeholder="******">
+				<input type="submit" value="cadastrar" class="input--main__style input--button">
+			</form>
+		</section>
+	</section>
+	<section class="section--container__responsive">
+		<section class="section--row__responsive">
+			<h1 class="generaltext">Detalhar Usuário X</h1>
+			<form onsubmit="addIdToPath('form-get', 'http://localhost:6789/x/')" method="get" id="form-get">
+				<input class="input--down" type="text" id="id" value="" placeholder="id do usuário x..."> 
+				<input type="submit" value="consultar" class="input--button input--consult__style">
+			</form>
+		</section>
+		
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		
+		<section class="section--row__responsive">
+			<h1 class="generaltext">Remover Usuário X</h1>
+			<form onsubmit="addIdToPath('form-delete', 'http://localhost:6789/x/delete/')" method="get" id="form-delete">
+				<input class="input--down" type="text" id="id" value="" placeholder="id do usuário x...">
+				<input type="submit" value="remover" class="input--remove__style input--button">
+			</form>
+		</section>
+		
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+		<section class="section--row__responsive">
+			<h1 class="generaltext">Listar Usuários X</h1>
+			<form action="http://localhost:6789/x"  method="get" id="form-all">
+			    <br><br><br>
+				<input type="submit" value="todos" class="input--consult__style input--button">
+			</form>
+		</section>
+	</section>
+
+	<section class="section--container__responsive" style="visibility: hidden" id="product-result">
+		<table border="1">
+			<tr>
+				<td>Usuárioid:</td>
+				<td><span id="idx">Sem Resultado</span></td>
+			</tr>
+			<tr>
+				<td>Nome:</td>
+				<td><span id="nome">Sem Resultado</span></td>
+			</tr>
+			<tr>
+				<td>Email:</td>
+				<td><span id="email">Sem Resultado</span></td>
+			</tr>
+			<tr>
+				<td>Senha:</td>
+				<td><span id="senha">Sem Resultado</span></td>
+			</tr>
+		</table>
+	</section>
+
+	<style>
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: white;
+}
+
+.titulo{
+	text-align: center;
+}
+
+.generaltext, p {
+	font-family: Arial;
+	text-align: center;
+}
+
+.section--container__responsive {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	border-bottom: dashed;
+	border-color: gray;
+}
+
+.input--down {
+	display: block;
+	margin: 0px auto;
+	margin-bottom: 10px;
+}
+
+.input--main__style {
+	background-color: #00FF00;
+}
+
+.input--remove__style {
+	background-color: red;
+}
+
+.input--consult__style {
+	background-color: darkblue;
+}
+
+.input--button {
+	font-weight: bold;
+	font-family: Arial;
+	font-size: medium;
+	border-color: transparent;
+	display: block;
+	margin: 0px auto;
+	margin-bottom: 10px;
+	color: white;
+}
+
+.input--register {
+	display: inline;
+}
+
+.input--radio {
+	display: inline;
+}
+
+input {
+	display: block;
+	border-radius: 7px;
+	padding: 10px;
+	border-style: solid;
+	border-color: lightgray;
+	color: black;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+.p--radio__display {
+	display: block;
+}
+
+form p {
+	text-align: initial;
+	display: inline;
+	margin-left: 15px;
+}
+
+.p--nomargin {
+	margin-left: 0px;
+	margin-right: 10px;
+}
+</style>
+
+
+
+</body>
+</html>
